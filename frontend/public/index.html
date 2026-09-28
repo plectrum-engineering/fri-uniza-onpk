@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TaskList</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='9' fill='%235b5bd6'/><path d='M9.5 16.5l4.5 4.5L22.5 12' stroke='white' stroke-width='3.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+</head>
+<body>
+
+<div class="shell">
+
+  <section class="card">
+
+    <header class="card-head">
+      <div class="heading">
+        <h1>TaskList</h1>
+        <p class="sub" id="sub">Loading</p>
+      </div>
+
+      <div class="ring">
+        <svg viewBox="0 0 44 44" aria-hidden="true">
+          <circle class="ring-track" cx="22" cy="22" r="19"></circle>
+          <circle class="ring-fill" id="ring-fill" cx="22" cy="22" r="19"></circle>
+        </svg>
+        <span class="ring-label" id="ring-label">0%</span>
+      </div>
+    </header>
+
+    <form id="add-form" autocomplete="off">
+      <input id="title" type="text" placeholder="Add a task" maxlength="200" required>
+      <button type="submit" id="add-btn" aria-label="Add task">
+        <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+      </button>
+    </form>
+
+    <p class="error" id="error" hidden></p>
+
+    <nav class="filters" id="filters">
+      <button class="chip is-active" data-filter="all">All</button>
+      <button class="chip" data-filter="active">Active</button>
+      <button class="chip" data-filter="done">Done</button>
+    </nav>
+
+    <ul class="list" id="list"></ul>
+
+    <div class="card-foot" id="card-foot" hidden>
+      <span id="remaining"></span>
+      <button class="link" id="clear-done">Clear completed</button>
+    </div>
+
+  </section>
+
+  <p class="meta">
+    <span class="pip" id="pip"></span>
+    <span id="status">connecting</span>
+    <span class="dot-sep">&middot;</span> web <b id="web-version">?</b>
+    <span class="dot-sep">&middot;</span> api <b id="api-version">?</b>
+    <span class="dot-sep">&middot;</span> <b id="api-instance">?</b>
+  </p>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
